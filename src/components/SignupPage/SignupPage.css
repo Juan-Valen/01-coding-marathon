@@ -1,0 +1,46 @@
+.signup-container {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+}
+
+input,
+select {
+  padding: 8px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+input.valid {
+  border-color: green;
+}
+
+input.invalid {
+  border-color: red;
+}
+
+.success-text {
+  color: green;
+  font-size: 0.9em;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.9em;
+}
+
+.signup-btn {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.signup-btn:hover {
+  background-color: #357ab7;
+}
