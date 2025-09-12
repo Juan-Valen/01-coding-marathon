@@ -71,7 +71,7 @@ function addContact() {
 
 ---
 
-###2. Refactoring Contact Display for Clarity
+### 2. Refactoring Contact Display for Clarity
 The original Contact.jsx component displayed contact information using emoji symbols and lacked semantic structure. This made the UI less accessible and harder to scan.
 
 **Original Implementation**
@@ -106,7 +106,7 @@ This version was visually playful but not ideal for professional use or screen r
   - Labeling: Replaced emojis with clear text labels.
   - Maintainability: Easier to style and extend with additional fields or actions.
 
-**Lessons Learned:**
+### Lessons Learned
 
  - I learned how to structure a React application using modular components by separating the logic and layout between ContactListManager.jsx and Contact.jsx, which helped me keep my code organized and easier to maintain.
 
