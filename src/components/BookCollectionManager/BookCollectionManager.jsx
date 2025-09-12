@@ -1,64 +1,105 @@
 import React, { useState } from "react";
-import "./BookCollectionManager.css"
+import Book from "./Book";
+import "./BookCollectionManager.css";
 
 function BookCollectionManager() {
+
   const [books, setBooks] = useState([]);
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
 
-  // Handle input change for title
-  function handleTitleChange(event) {
-    setTitle(event.target.value);
+  const [newBook, setNewBook] = useState({
+    title: "",
+    author: "",
+    year: "",
+    publisher: "",
+    isbn: "",
+  });
+
+  // Handle input change for both fields
+  function handleInputChange(event) {
+    const { name, value } = event.target;
+    setNewBook((prevBook) => ({ ...prevBook, [name]: value }));
   }
 
-  // Handle input change for author
-  function handleAuthorChange(event) {
-    setAuthor(event.target.value);
-  }
-
-  // Add a new book to the list
+  // Add book
   function addBook() {
-    if (title.trim() !== "" && author.trim() !== "") {
-      setBooks((b) => [...b, { title, author }]);
-      setTitle("");
-      setAuthor(""); // Clear the input fields
+    if (
+      newBook.title.trim() &&
+      newBook.author.trim() &&
+      newBook.year.trim() &&
+      newBook.publisher.trim() &&
+      newBook.isbn.trim()
+    ) {
+      setBooks((prev) => [
+        ...prev,
+        {
+          id: Date.now(),
+          title: newBook.title,
+          author: newBook.author,
+          year: newBook.year,
+          publisher: newBook.publisher,
+          isbn: newBook.isbn,
+        },
+      ]);
+
+      // clear inputs
+      setNewBook({ title: "", author: "", year: "", publisher: "", isbn: "" });
     }
   }
 
-  // Delete a book from the list
-  function deleteBook(index) {
-    const updatedBooks = books.filter((_, i) => i !== index);
-    setBooks(updatedBooks);
+  // Delete book
+  function deleteBook(id) {
+    setBooks(books.filter((book) => book.id !== id));
   }
 
   return (
     <div className="book-collection">
       <h1>Book Collection Manager</h1>
-      <div>
+      <div className="form">
         <input
           type="text"
           placeholder="Enter book title..."
-          value={title}
-          onChange={handleTitleChange}
+          name="title"
+          value={newBook.title}
+          onChange={handleInputChange}
         />
         <input
           type="text"
-          placeholder="Enter author name..."
-          value={author}
-          onChange={handleAuthorChange}
+          placeholder="Enter author..."
+          name="author"
+          value={newBook.author}
+          onChange={handleInputChange}
+        />
+        <input
+          type="number"
+          placeholder="Enter year..."
+          name="year"
+          value={newBook.year}
+          onChange={handleInputChange}
+        />
+        <input
+          type="text"
+          placeholder="Enter publisher..."
+          name="publisher"
+          value={newBook.publisher}
+          onChange={handleInputChange}
+        />
+        <input
+          type="text"
+          placeholder="Enter ISBN..."
+          name="isbn"
+          value={newBook.isbn}
+          onChange={handleInputChange}
         />
         <button onClick={addBook}>Add Book</button>
       </div>
+
       <ol>
-        {books.map((book, index) => (
-          <li key={index}>
-            {book.title} by {book.author}
-            <button onClick={() => deleteBook(index)}>Delete</button>
-          </li>
+        {books.map((book) => (
+          <Book key={book.id} newBook={newBook} book={book} onDelete={deleteBook} />
         ))}
       </ol>
     </div>
   );
-}
+};
 
 export default BookCollectionManager;
