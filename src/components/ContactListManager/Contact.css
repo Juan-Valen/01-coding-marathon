@@ -1,30 +1,39 @@
 .contact-item {
   background-color: #f9f9f9;
-  padding: 20px;
-  margin-bottom: 16px;
+  padding: 16px 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   position: relative;
   line-height: 1.6;
   transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Adds space between each row */
 }
 
 .contact-item:hover {
   transform: translateY(-2px);
 }
 
-.contact-item strong {
-  font-size: 1.2rem;
+.contact-item .label {
+  font-weight: 600;
   color: #2c3e50;
-  display: block;
-  margin-bottom: 8px;
+  margin-right: 6px;
 }
 
+.contact-item div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  font-size: 0.95rem;
+  color: #34495e;
+}
+
+/* Delete button styling */
 .contact-item button {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  background-color: #ff4d4f;
+  align-self: flex-end;
+  margin-top: 12px;
+  background-color: #e74c3c;
   color: white;
   border: none;
   padding: 8px 14px;
@@ -37,6 +46,6 @@
 }
 
 .contact-item button:hover {
-  background-color: #d9363e;
+  background-color: #c0392b;
   transform: scale(1.05);
 }
