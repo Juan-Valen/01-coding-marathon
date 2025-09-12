@@ -1,0 +1,51 @@
+.contact-item {
+  background-color: #f9f9f9;
+  padding: 16px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: relative;
+  line-height: 1.6;
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Adds space between each row */
+}
+
+.contact-item:hover {
+  transform: translateY(-2px);
+}
+
+.contact-item .label {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-right: 6px;
+}
+
+.contact-item div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  font-size: 0.95rem;
+  color: #34495e;
+}
+
+/* Delete button styling */
+.contact-item button {
+  align-self: flex-end;
+  margin-top: 12px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-item button:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
