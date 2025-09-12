@@ -1,0 +1,84 @@
+/* Reset and base styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+/* Main container */
+.contact-list {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Title */
+.contact-list h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+/* Form section */
+.form-section form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.form-section label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #34495e;
+  flex: 1 1 150px;
+  min-width: 150px;
+}
+
+.form-section input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-top: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-section button {
+  padding: 10px 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: 42px;
+}
+
+.form-section button:hover {
+  background-color: #2980b9;
+}
+
+/* Contact list section */
+.list-section {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.list-section ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
