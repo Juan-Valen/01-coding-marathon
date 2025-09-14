@@ -12,7 +12,7 @@ function RecipeManager() {
 
     function addRecipe(e) {
         e.preventDefault();
-        if (newRecipe.name.trim() !== "" && newRecipe.ingredients.trim() !== "") {
+        if (newRecipe.name.trim() !== "" && newRecipe.ingredients.trim() !== "" && newRecipe.instructions !== "" && newRecipe.prepTime >= 0) {
             setRecipes((r) => [...r, newRecipe]);
             setNewRecipe({ name: "", ingredients: "", instructions: "", prepTime: 0, nutritionInfo: "" });
         }
